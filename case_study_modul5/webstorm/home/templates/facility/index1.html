@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="layout.css">
+    <title>Furama Resort System</title>
+
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+
+
+</head>
+
+<body>
+
+<div class="container-fluid bg-gray-500 d-flex myCSS" style="height: 150px">
+    <img class="h-100 p-4" src="https://www.furama.com/images/LOGOFurama_4C_Normal.png" alt="">
+</div>
+<nav id="nav" class="navbar navbar-expand-lg navbars ">
+    <div class="container-fluid mx-5">
+        <a class="navbar-brand" href="home.html">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown ms-3">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">Employee</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/employee">Employee list</a></li>
+                        <li><a class="dropdown-item" href="/employee/create">Add new Employee</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown ms-3">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">Customer</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/customer">Customer list</a></li>
+                        <li><a class="dropdown-item" href="/customer/create">Add new Customer</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown ms-3">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">Service</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="index1.html">Facility list</a></li>
+                        <li><a class="dropdown-item" href="/facility/create">Add new Facility</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown ms-3">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">Contract</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/contract">Contract list</a></li>
+                        <li><a class="dropdown-item" href="/contract/create">Add new Contract</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<div class="container-fluid mx-2">
+    <h2>FACILITY LIST</h2>
+
+    <table id="facilityTable">
+        <tr>
+            <thead>
+            <th>
+
+            </th>
+            </thead>
+            <tbody>
+            <tr>
+
+<!--                    <div class="row">-->
+
+<!--                        <div class="col-3">-->
+<!--                            <div class="card shadow" style="width: 17rem;margin: auto">-->
+<!--                                <img style="height: 200px"-->
+<!--                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzHGQhT1Vps9-Hv7z7tflDz3PxpN9d2NS9MA&usqp=CAU"-->
+<!--                                     style="height: 200px" class="card-img-top" alt="...">-->
+
+<!--                                <div class="card-body">-->
+<!--                                    <h5 class="card-title">Card title</h5>-->
+<!--                                    <p class="card-text"></p>-->
+<!--                                </div>-->
+<!--                                <ul class="list-group list-group-flush">-->
+<!--                                    <li class="list-group-item">An item</li>-->
+<!--                                    <li class="list-group-item">A second item</li>-->
+<!--                                    <li class="list-group-item">A third item</li>-->
+<!--                                </ul>-->
+<!--                                <div class="card-body">-->
+<!--                                    <a href="#" class="card-link btn btn-primary">UPDATE</a>-->
+<!--                                    <a style="margin-left: 50px" href="#" role="button"-->
+<!--                                       class="card-link btn btn-danger">DELETE</a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-3">-->
+<!--                            <div class="card shadow" style="width: 17rem;margin: auto">-->
+<!--                                <img style="height: 200px"-->
+<!--                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgF9Ed18EEHpNxdcygSzD2M_COc0b6cClnng&usqp=CAU"-->
+<!--                                     class="card-img-top" alt="...">-->
+<!--                                <div class="card-body">-->
+<!--                                    <h5 class="card-title">Card title</h5>-->
+<!--                                    <p class="card-text"></p>-->
+<!--                                </div>-->
+<!--                                <ul class="list-group list-group-flush">-->
+<!--                                    <li class="list-group-item">An item</li>-->
+<!--                                    <li class="list-group-item">A second item</li>-->
+<!--                                    <li class="list-group-item">A third item</li>-->
+<!--                                </ul>-->
+<!--                                <div class="card-body">-->
+<!--                                    <a href="#" class="card-link btn btn-primary">UPDATE</a>-->
+<!--                                    <a style="margin-left: 50px" href="#" role="button"-->
+<!--                                       class="card-link btn btn-danger">DELETE</a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-3">-->
+<!--                            <div class="card shadow" style="width: 17rem;margin: auto">-->
+<!--                                <img style="height: 200px"-->
+<!--                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJd3s47ymJIvsBmBptMYL7H8F_n-DnLoJHYB9EkVJYXvyiox8NnvO4SSgGYwPZhREJbL0&usqp=CAU"-->
+<!--                                     class="card-img-top" alt="...">-->
+<!--                                <div class="card-body">-->
+<!--                                    <h5 class="card-title">Card title</h5>-->
+<!--                                    <p class="card-text"></p>-->
+<!--                                </div>-->
+<!--                                <ul class="list-group list-group-flush">-->
+<!--                                    <li class="list-group-item">An item</li>-->
+<!--                                    <li class="list-group-item">A second item</li>-->
+<!--                                    <li class="list-group-item">A third item</li>-->
+<!--                                </ul>-->
+<!--                                <div class="card-body">-->
+<!--                                    <a href="#" class="card-link btn btn-primary">UPDATE</a>-->
+<!--                                    <a style="margin-left: 50px" href="#" role="button"-->
+<!--                                       class="card-link btn btn-danger">DELETE</a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-3">-->
+<!--                            <div class="card shadow" style="width: 17rem;margin: auto">-->
+<!--                                <img style="height: 200px"-->
+<!--                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeewEsJUg5idz9k-WSAMrn74YpZ_s6txjGsreXf3Sw1QVMuMLjSj7_91743G9sWRQYQ-M&usqp=CAU"-->
+<!--                                     class="card-img-top" alt="...">-->
+<!--                                <div class="card-body">-->
+<!--                                    <h5 class="card-title">Card title</h5>-->
+<!--                                    <p class="card-text"></p>-->
+<!--                                </div>-->
+<!--                                <ul class="list-group list-group-flush">-->
+<!--                                    <li class="list-group-item">An item</li>-->
+<!--                                    <li class="list-group-item">A second item</li>-->
+<!--                                    <li class="list-group-item">A third item</li>-->
+<!--                                </ul>-->
+<!--                                <div class="card-body">-->
+<!--                                    <a href="#" class="card-link btn btn-primary">UPDATE</a>-->
+<!--                                    <a style="margin-left: 50px" href="#" role="button"-->
+<!--                                       class="card-link btn btn-danger">DELETE</a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+
+<!--                    </div>-->
+
+                <td>
+
+                    <div class="card shadow  " style="width: 17rem;margin: auto">
+                        <img style="height: 200px"
+                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUc7XJDl8kLom92SNfOWCO361c7_oNE54gWA&usqp=CAU"
+                             class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text"></p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link btn btn-primary">UPDATE</a>
+                            <a style="margin-left: 50px" href="#" role="button"
+                               class="card-link btn btn-danger">DELETE</a>
+                        </div>
+                    </div>
+
+                </td>
+                <td>
+
+                    <div class="card shadow  " style="width: 17rem;margin: auto">
+                        <img style="height: 200px"
+                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxljL83gT8h1qZYds2CgNpJtB0Bfwy9f6iqQ&usqp=CAU"
+                             class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text"></p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link btn btn-primary">UPDATE</a>
+                            <a style="margin-left: 50px" href="#" role="button"
+                               class="card-link btn btn-danger">DELETE</a>
+                        </div>
+                    </div>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+
+                            <div class="card shadow  " style="width: 17rem;margin: auto">
+                                <img style="height: 200px"
+                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUc7XJDl8kLom92SNfOWCO361c7_oNE54gWA&usqp=CAU"
+                                     class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text"></p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">An item</li>
+                                    <li class="list-group-item">A second item</li>
+                                    <li class="list-group-item">A third item</li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="card-link btn btn-primary">UPDATE</a>
+                                    <a style="margin-left: 50px" href="#" role="button"
+                                       class="card-link btn btn-danger">DELETE</a>
+                                </div>
+                            </div>
+
+                </td>
+                <td>
+
+                        <div class="card shadow  " style="width: 17rem;margin: auto">
+                            <img style="height: 200px"
+                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxljL83gT8h1qZYds2CgNpJtB0Bfwy9f6iqQ&usqp=CAU"
+                                 class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text"></p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                            <div class="card-body">
+                                <a href="#" class="card-link btn btn-primary">UPDATE</a>
+                                <a style="margin-left: 50px" href="#" role="button"
+                                   class="card-link btn btn-danger">DELETE</a>
+                            </div>
+                        </div>
+
+                </td>
+                <td>
+
+                        <div class="card shadow" style="width: 17rem;margin: auto">
+                            <img style="height: 200px"
+                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXTMBwb9AwLFtrIdbCL30JU83X-ddTYa74SA&usqp=CAU"
+                                 class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text"></p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                            <div class="card-body">
+                                <a href="#" class="card-link btn btn-primary">UPDATE</a>
+                                <a style="margin-left: 50px" href="#" role="button"
+                                   class="card-link btn btn-danger">DELETE</a>
+                            </div>
+                        </div>
+
+                </td>
+                <td>
+
+                        <div class="card shadow" style="width: 17rem;margin: auto">
+                            <img style="height: 200px"
+                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi_oqr-rnufefCUxWJl2teRboM8YkL6e-vLoEcE3jG5INd8jP4WCmOEg8B7LVvAEjxNLc&usqp=CAU"
+                                 class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text"></p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                            <div class="card-body">
+                                <a href="#" class="card-link btn btn-primary">UPDATE</a>
+                                <a style="margin-left: 50px" href="#" role="button"
+                                   class="card-link btn btn-danger">DELETE</a>
+                            </div>
+                        </div>
+
+                </td>
+            </tr>
+
+            </tbody>
+        </tr>
+    </table>
+</div>
+
+<script src="jquery/jquery-3.5.1.min.js"></script>
+<script src="js/dataTables.bootstrap4.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#facilityTable').dataTable({
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 1
+        });
+    });
+</script>
+</body>
+</html>
