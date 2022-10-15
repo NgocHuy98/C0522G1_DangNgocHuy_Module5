@@ -15,7 +15,7 @@ body {
 
 a {
     text-decoration: none;
-    color: green;
+    color: deeppink;
 }
 
 a:hover {
@@ -89,7 +89,6 @@ input[type=submit] {
     cursor: pointer;
     text-align: center;
 }
-
 
 input[type=search] {
     width: 200px;

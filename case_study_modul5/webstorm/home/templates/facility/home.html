@@ -1,352 +1,176 @@
 <!DOCTYPE html>
 <html>
-<head >
+<head>
     <title>Furama Resort System</title>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="layout.css">
+    <script src="../../static/jquery/jquery-3.5.1.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-            crossorigin="anonymous">
+    <script>
+        $(function () {
+            $("#includedContent1").load("header.html");
+            $("#includedContent2").load("footer.html");
+        });
     </script>
-    <link rel="stylesheet" href="../layout.css">
+
 </head>
 <body>
-<div >
-    <div class="container-fluid bg-gray-500 d-flex myCSS" style="height: 150px">
-        <img class="h-100 p-4" src="https://www.furama.com/images/LOGOFurama_4C_Normal.png" alt="">
-        <div class="h-100 p-4">
-
-                                <li><span><i class="fa fa-map-marker"></i></span>
-                                    103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City,
-                                    Vietnam
-                                    7,0 km from Danang Airport
-                                </li>
-                                <li><span><i class="fa fa-phone"></i></span>+84 799 752 479</li>
-
-
-                    </div>
-
-
-        <div class="h-100 p-4">
-                            <ul class="list-unstyled list-inline">
-                                <li><a href="login.html"><span><i class="fa fa-lock"></i></span>Login</a></li>
-                                <li><a href="registration.html"><span><i class="fa fa-plus"></i></span>Sign Up</a></li>
-                                <li>
-                                    <form>
-                                        <ul class="list-inline">
-                                            <li>
-                                                <div class="form-group currency">
-                                                    <span><i class="fa fa-angle-down"></i></span>
-                                                    <select>
-                                                        <option value="">$</option>
-                                                        <option value="">£</option>
-                                                    </select>
-                                                </div><!-- end form-group -->
-                                            </li>
-
-                                            <li>
-                                                <div class="form-group language">
-                                                    <span><i class="fa fa-angle-down"></i></span>
-                                                    <select>
-                                                        <option value="">EN</option>
-                                                        <option value="">UR</option>
-                                                        <option value="">FR</option>
-                                                        <option value="">IT</option>
-                                                    </select>
-                                                </div><!-- end form-group -->
-                                            </li>
-                                        </ul>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div><!-- end links -->
-
-        </div><!-- end top-bar -->
-
-
-    </div>
-
-    <nav id="nav" class="navbar navbar-expand-lg navbars ">
-        <div class="container-fluid mx-5">
-            <a class="navbar-brand" href="home.html">Home</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown ms-3">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">Employee</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/employee">Employee list</a></li>
-                            <li><a class="dropdown-item" href="/employee/create">Add new Employee</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown ms-3">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">Customer</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/customer">Customer list</a></li>
-                            <li><a class="dropdown-item" href="/customer/create">Add new Customer</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown ms-3">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">Service</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="index1.html">Facility list</a></li>
-                            <li><a class="dropdown-item" href="/facility/create">Add new Facility</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown ms-3">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">Contract</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/contract">Contract list</a></li>
-                            <li><a class="dropdown-item" href="/contract/create">Add new Contract</a></li>
-                        </ul>
-                    </li>
-                </ul>
-
-            </div>
-        </div>
-    </nav>
-
-
+<div id="includedContent1"></div>
 <div>
 
-<!--        <div class="col-lg-2">-->
-<!--            <div class="row " style="margin: 18px 0 0 10px ">-->
-<!--                <div class="col-lg-2"><img-->
-<!--                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png"-->
-<!--                        style="height: 32px;width: 32px; ">-->
-<!--                </div>-->
-<!--                <div class="col-lg-10 mt-1 "><a href="https://www.facebook.com/furamaresort/"-->
-<!--                                                style="color: black; text-decoration: none">fb.com/furamaresort</a>-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--            <div class="row info">-->
-<!--                <div class="col-lg-2"><img-->
-<!--                        src="https://banner2.cleanpng.com/20180331/yaq/kisspng-logo-telephone-company-yell-calling-5abf775edb9bb5.0259369015224973748995.jpg"-->
-<!--                        style="height: 40px;width: 40px;padding: 5px"></div>-->
-<!--                <div class="col-lg-10 mt-1"><a href="https://www.facebook.com/furamaresort/"-->
-<!--                                               style="color: black; text-decoration: none">0123456789</a></div>-->
-<!--            </div>-->
-<!--            <div class="row info">-->
-<!--                <div class="col-lg-2"><img-->
-<!--                        src="https://www.e-mailit.com/social-buttons/build/images/solutions/zalo-icon.png"-->
-<!--                        style="height: 40px;width: 40px;padding: 5px"></div>-->
-<!--                <div class="col-lg-10 mt-1"><a href="https://www.facebook.com/furamaresort/"-->
-<!--                                               style="color: black; text-decoration: none">zl.com/furamaresort</a></div>-->
-<!--            </div>-->
-<!--            <div class="row info">-->
-<!--                <div class="col-lg-2 "><img-->
-<!--                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Email_Shiny_Icon.svg/1200px-Email_Shiny_Icon.svg.png"-->
-<!--                        style="height: 40px;width: 40px;padding: 5px"></div>-->
-<!--                <div class="col-lg-10 mt-1"><a href="https://www.facebook.com/furamaresort/ "-->
-<!--                                               style="color: black; text-decoration: none">furama@gmail.com</a></div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-            <img width="100%" height="520" id="img" onclick="changeImage()"
-                 src="https://furamavietnam.com/wp-content/uploads/2018/11/Vietnam_Danang_Furama_Resort_Exterior_Courtyard-Night.jpg"
-                 alt="">
-
+    <img width="100%" height="520" id="img" onclick="changeImage()"
+         src="https://furamavietnam.com/wp-content/uploads/2018/11/Vietnam_Danang_Furama_Resort_Exterior_Courtyard-Night.jpg"
+         alt="">
 
 </div>
 <div class="container-fluid">
-<div class="row mt-5">
-    <div class="col-4 px-lg-5 ">
-        <h2 style="color: #C77F28">
-            KHU NGHỈ DƯỠNG ĐẲNG CẤP THẾ GIỚI, FURAMA ĐÀ NẴNG, NỔI TIẾNG LÀ KHU NGHỈ DƯỠNG ẨM THỰC TẠI VIỆT NAM.
-        </h2>
-    </div>
-    <div class="col-4">
-        <iframe width="400" height="300" src="https://www.youtube.com/embed/IjlT_4mvd-c"
-                title="The Furama Resort DaNang - Couples Corporate" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-    </div>
-    <div class="col-4">
-        <p>
-            Hướng ra bãi biển Đà Nẵng trải dài cát trắng, Furama Resort Đà Nẵng là cửa ngõ đến với 3 di sản văn hoá thế
-            giới: Hội An (20 phút), Mỹ Sơn (90 phút) và Huế (2 tiếng. 196 phòng hạng sang cùng với 70 căn biệt thự từ
-            hai đến bốn phòng ngủ có hồ bơi riêng đều được trang trí trang nhã, theo phong cách thiết kế truyền thống
-            của Việt Nam và kiến trúc thuộc địa của Pháp, biến Furama thành khu nghỉ dưỡng danh giá nhất tại Việt Nam –
-            vinh dự được đón tiếp nhiều người nổi tiếng, giới hoàng gia, chính khách, ngôi sao điện ảnh và các nhà lãnh
-            đạo kinh doanh quốc tế.
-        </p>
-    </div>
-</div>
-
-
-<!--<div>-->
-<!--    <section id="hot-tour" class="section-padding">-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="col-sm-12 col-md-12 col-lg-7 hot-tour-carousel">-->
-<!--                    <div id="hot-tour-carousel" class="carousel slide" data-ride="carousel">-->
-
-<!--                        <div class="carousel-inner">-->
-<!--                            <div class="item active">-->
-<!--                                <img src="https://q-cf.bstatic.com/images/hotel/max1024x768/128/128145956.jpg" alt="Los Angeles">-->
-<!--                            </div>-->
-
-<!--                            <div class="item">-->
-<!--                                <img src="https://furamavietnam.com/wp-content/uploads/2018/03/%5E6DE9BEBFEE2384AC78EC023B7ADCC27531A85137F56C08A03A%5Epimgpsh_fullsize_distr-1-1047x563.jpg" alt="Chicago">-->
-<!--                            </div>-->
-<!--                        </div>&lt;!&ndash; end carousel-inner &ndash;&gt;-->
-
-<!--                        <a class="left carousel-control" href="#hot-tour-carousel" data-slide="prev">-->
-<!--                            <span class="glyphicon glyphicon-chevron-left"></span>-->
-<!--                            <span class="sr-only">Previous</span>-->
-<!--                        </a>-->
-<!--                        <a class="right carousel-control" href="#hot-tour-carousel" data-slide="next">-->
-<!--                            <span class="glyphicon glyphicon-chevron-right"></span>-->
-<!--                            <span class="sr-only">Next</span>-->
-<!--                        </a>-->
-<!--                    </div>&lt;!&ndash; end hot-tour-carousel &ndash;&gt;-->
-<!--                </div>&lt;!&ndash; end columns &ndash;&gt;-->
-
-<!--                <div class="col-sm-12 col-md-12 col-lg-5 hot-tour-text">-->
-<!--                    <h3>ƯU ĐÃI LỚN</h3>-->
-<!--                    <h2 class="hot-tour-title">Presidential Suite</h2>-->
-<!--                    <p>2300$ / 2 Người / 7 Đêm-->
-<!--                    </p>-->
-<!--                    <a href="tour-detail-right-sidebar.html" class="btn btn-orange">Đặt ngay</a>-->
-<!--                    <a href="tour-detail-right-sidebar.html" class="btn btn-details">Xem chi tiết</a>-->
-<!--                </div>&lt;!&ndash; end columns &ndash;&gt;-->
-
-<!--            </div>&lt;!&ndash; end row &ndash;&gt;-->
-<!--        </div>&lt;!&ndash; end container &ndash;&gt;-->
-<!--    </section>-->
-<!--</div>-->
-
-<div class="row">
-    <div class="col-4"></div>
-    <div class="col-4">
-        <h2 style="color: #FAB523">TYPE ROOM</h2>
-        <div>
-            Khu nghỉ dưỡng có 196 phòng được thiết kế theo phong cách truyền thống Việt Nam kết hợp với phong cách
-            Pháp, 2 tòa nhà 4 tầng có hướng nhìn ra biển, nhìn ra hồ bơi trong xanh và những khu vườn nhiệt đới xanh
-            tươi mát. Ngoài ra, khu nghỉ dưỡng Furama còn cung cấp các liệu pháp spa, phòng xông hơi ướt, phòng
-            xông hơi khô, dịch vụ mát-xa cạnh hồ bơi, các dịch vụ thể thao dưới nước và các lớp tập yoga và
-            Thái Cực Quyền trên bãi biển.
+    <div class="row mt-5">
+        <div class="col-4 px-lg-5 ">
+            <h2 style="color: #C77F28">
+                KHU NGHỈ DƯỠNG ĐẲNG CẤP THẾ GIỚI, FURAMA ĐÀ NẴNG, NỔI TIẾNG LÀ KHU NGHỈ DƯỠNG ẨM THỰC TẠI VIỆT NAM.
+            </h2>
+        </div>
+        <div class="col-4">
+            <iframe width="400" height="300" src="https://www.youtube.com/embed/IjlT_4mvd-c"
+                    title="The Furama Resort DaNang - Couples Corporate" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+        <div class="col-4">
+            <p>
+                Hướng ra bãi biển Đà Nẵng trải dài cát trắng, Furama Resort Đà Nẵng là cửa ngõ đến với 3 di sản văn hoá
+                thế
+                giới: Hội An (20 phút), Mỹ Sơn (90 phút) và Huế (2 tiếng. 196 phòng hạng sang cùng với 70 căn biệt thự
+                từ
+                hai đến bốn phòng ngủ có hồ bơi riêng đều được trang trí trang nhã, theo phong cách thiết kế truyền
+                thống
+                của Việt Nam và kiến trúc thuộc địa của Pháp, biến Furama thành khu nghỉ dưỡng danh giá nhất tại Việt
+                Nam –
+                vinh dự được đón tiếp nhiều người nổi tiếng, giới hoàng gia, chính khách, ngôi sao điện ảnh và các nhà
+                lãnh
+                đạo kinh doanh quốc tế.
+            </p>
         </div>
     </div>
-    <div class="col-4"></div>
 
-</div>
 
-<div class="container-fluid" style="margin-top: 10px">
     <div class="row">
-        <div class="col-3"></div>
-        <div class="col-6">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                            class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                            aria-label="Slide 4"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active ">
-                        <img style="height: 300px"
-                             src="https://media.sosanhnha.com/batdongsan/2022/07/19/1658195839-picturej4aq2.jpg"
-                             class="d-block w-100 " alt="...">
-                        <div style="background: #006362;color: #FF73B7">
-                            <p style="margin-top: 10px">PHÒNG STUDIO SUITE HƯỚNG BIỂN</p>
-                            <small>Diện tích phòng: 43.7 </small><small>m<sup>2</sup></small>
-                        </div>
-
-                    </div>
-                    <div class="carousel-item">
-
-                        <img style="height: 300px"
-                             src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Studio-Suite-M-1047x563.jpg"
-                             class="d-block w-100 " alt="...">
-                        <div style="background: #006362;color: #FF73B7">
-                            <p style="margin-top: 10px">PHÒNG STUDIO SUITE HƯỚNG HỒ</p>
-                            <small>Diện tích phòng: 40 </small><small>m<sup>2</sup></small>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img style="height: 300px"
-                             src="https://resortdanang.info/wp-content/uploads/2018/12/twins-bed-lagoon-superior-furama-da-nang-1-1024x551.jpg"
-                             class="d-block w-100 " alt="...">
-                        <div style="background: #006362;color: #FF73B7">
-                            <p style="margin-top: 10px">PHÒNG STUDIO SUITE HƯỚNG VƯỜN</p>
-                            <small>Diện tích phòng: 40 </small><small>m<sup>2</sup></small>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img style="height: 300px"
-                             src="https://file4.batdongsan.com.vn/resize/745x510/2021/11/01/20211101150031-e972_wm.jpg"
-                             class="d-block w-100 " alt="...">
-                        <div style="background: #006362;color: #FF73B7">
-                            <p style="margin-top: 10px">PHÒNG STUDIO SUITE HƯỚNG BIỂN</p>
-                            <small>Diện tích phòng: 43.7 </small><small>m<sup>2</sup></small>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+        <div class="col-4"></div>
+        <div class="col-4">
+            <h2 style="color: #FAB523">TYPE ROOM</h2>
+            <div>
+                Khu nghỉ dưỡng có 196 phòng được thiết kế theo phong cách truyền thống Việt Nam kết hợp với phong cách
+                Pháp, 2 tòa nhà 4 tầng có hướng nhìn ra biển, nhìn ra hồ bơi trong xanh và những khu vườn nhiệt đới xanh
+                tươi mát. Ngoài ra, khu nghỉ dưỡng Furama còn cung cấp các liệu pháp spa, phòng xông hơi ướt, phòng
+                xông hơi khô, dịch vụ mát-xa cạnh hồ bơi, các dịch vụ thể thao dưới nước và các lớp tập yoga và
+                Thái Cực Quyền trên bãi biển.
             </div>
         </div>
-        <div class="col-3"></div>
+        <div class="col-4"></div>
 
     </div>
 
+    <div class="container-fluid" style="margin-top: 10px">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active ">
+                            <img style="height: 300px"
+                                 src="https://media.sosanhnha.com/batdongsan/2022/07/19/1658195839-picturej4aq2.jpg"
+                                 class="d-block w-100 " alt="...">
+                            <div style="background: #006362;color: #FF73B7">
+                                <p style="margin-top: 10px">PHÒNG STUDIO SUITE HƯỚNG BIỂN</p>
+                                <small>Diện tích phòng: 43.7 </small><small>m<sup>2</sup></small>
+                            </div>
 
-    <div class="container-fluid">
-        <div class="row mt-2 ">
-            <div class="col-4">
-                <iframe width="425" height="300" src="https://www.youtube.com/embed/PgvSSl4jm1U"
-                        title="Furama Resort Da Nang" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-            </div>
-            <div class="col-4">
-                <iframe width="425" height="300" src="https://www.youtube.com/embed/L5B05GaZsy4"
-                        title="FURAMA RESORT DANANG - Ngu Hanh Son, Da Nang" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-            </div>
+                        </div>
+                        <div class="carousel-item">
 
-            <div class="col-4">
-                <iframe width="425" height="300" src="https://www.youtube.com/embed/IjlT_4mvd-c"
-                        title="The Furama Resort DaNang - Couples Corporate" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                            <img style="height: 300px"
+                                 src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Studio-Suite-M-1047x563.jpg"
+                                 class="d-block w-100 " alt="...">
+                            <div style="background: #006362;color: #FF73B7">
+                                <p style="margin-top: 10px">PHÒNG STUDIO SUITE HƯỚNG HỒ</p>
+                                <small>Diện tích phòng: 40 </small><small>m<sup>2</sup></small>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img style="height: 300px"
+                                 src="https://resortdanang.info/wp-content/uploads/2018/12/twins-bed-lagoon-superior-furama-da-nang-1-1024x551.jpg"
+                                 class="d-block w-100 " alt="...">
+                            <div style="background: #006362;color: #FF73B7">
+                                <p style="margin-top: 10px">PHÒNG STUDIO SUITE HƯỚNG VƯỜN</p>
+                                <small>Diện tích phòng: 40 </small><small>m<sup>2</sup></small>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img style="height: 300px"
+                                 src="https://file4.batdongsan.com.vn/resize/745x510/2021/11/01/20211101150031-e972_wm.jpg"
+                                 class="d-block w-100 " alt="...">
+                            <div style="background: #006362;color: #FF73B7">
+                                <p style="margin-top: 10px">PHÒNG STUDIO SUITE HƯỚNG BIỂN</p>
+                                <small>Diện tích phòng: 43.7 </small><small>m<sup>2</sup></small>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
+            <div class="col-3"></div>
 
         </div>
+
+
+        <div class="container-fluid">
+            <div class="row mt-2 ">
+                <div class="col-4">
+                    <iframe width="425" height="300" src="https://www.youtube.com/embed/PgvSSl4jm1U"
+                            title="Furama Resort Da Nang" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+                <div class="col-4">
+                    <iframe width="425" height="300" src="https://www.youtube.com/embed/L5B05GaZsy4"
+                            title="FURAMA RESORT DANANG - Ngu Hanh Son, Da Nang" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+
+                <div class="col-4">
+                    <iframe width="425" height="300" src="https://www.youtube.com/embed/IjlT_4mvd-c"
+                            title="The Furama Resort DaNang - Couples Corporate" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </div>
+
+
     </div>
-
-
-</div>
 </div>
 
 <script>
@@ -361,8 +185,6 @@
     }
     setInterval(changeImage, 2000);
 </script>
-<footer>
-    <div style="text-align: center;background: pink;margin: auto"> &copy; Huy Jr</div>
-</footer>
+<div id="includedContent2"></div>
 </body>
 </html>
