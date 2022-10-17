@@ -1,0 +1,24 @@
+<h2>Calculator</h2>
+
+<form class="form-control">
+  <div class="mb-3 f">
+    <label for="num1" class="form-label">First number</label>
+    <input type="number" class="form-control" id="num1" aria-describedby="emailHelp" [(ngModel)] = "firstNumber" name="num1">
+  </div>
+  <div class="mb-3">
+    <label for="num2" class="form-label">Second number</label>
+    <input type="number" class="form-control" id="num2" [(ngModel)]="secondNumber" name="num2">
+  </div>
+  <select name="option" #cal>
+    <option value="add">(+)</option>
+    <option value="sub">(-)</option>
+    <option value="mul">(X)</option>
+    <option value="div">(/)</option>
+  </select>
+  <input type="submit" (click)="calculation(cal.value)">
+
+</form>
+
+<h2>{{result}}</h2>
+
+

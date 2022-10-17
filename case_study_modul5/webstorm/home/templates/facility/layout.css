@@ -32,27 +32,27 @@ h2 {
 }
 
 
-#furamas {
+.furamas {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
 
-#furamas td, #furamas th {
+.furamas td, #furamas th {
     border: 1px solid orchid;
     padding: 8px;
     text-align: left;
 }
 
-#furamas tr:nth-child(even) {
+.furamas tr:nth-child(even) {
     background-color: pink;
 }
 
-#furamas tr:hover {
+.furamas tr:hover {
     background-color: deeppink;
 }
 
-#furamas th {
+.furamas th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;

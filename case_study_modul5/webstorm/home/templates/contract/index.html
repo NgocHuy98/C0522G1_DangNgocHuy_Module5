@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="/layout :: head">
+<html>
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#includedContent11").load("header.html");
+            $("#includedContent22").load("footer.html");
+        });
+    </script>
+    <link rel="stylesheet" href="../facility/layout.css">
 
 </head>
 <body>
-<div th:replace="/layout::nav"></div>
-
+<div id="includedContent11"></div>
 <div class="container-fluid">
     <h2>CONTRACT LIST</h2>
     <div class="mx-lg-2">
@@ -18,14 +26,12 @@
             </div>
 
             <div class="col-8 notify">
-                <div th:if="${message}">
-                    <span th:text="${message}" class="btn btn-outline-success"></span>
-                </div>
+
             </div>
         </div>
 
         <div class="mt-2">
-            <table id="furamas">
+            <table id="facilityTable" class="furamas">
                 <thead>
                 <tr>
                     <th>Index</th>
@@ -40,14 +46,66 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="row,rowStat : ${contract}">
-                    <td th:text="${ contract.number * 3 +rowStat.count}"></td>
-                    <td th:text="${row.getFacilityName}"></td>
-                    <td th:text="${row.getCustomerName}"></td>
-                    <td th:text="${row.getStartDate}"></td>
-                    <td th:text="${row.getEndDate}"></td>
-                    <td th:text="${row.getDeposit}"></td>
-                    <td th:text="${row.getTotal}"></td>
+                <tr>
+                    <td>1</td>
+                    <td>Penhouse Da Lat</td>
+                    <td>Neymar Jr</td>
+                    <td>09-09-2009</td>
+                    <td>10-10-2010</td>
+                    <td>100000</td>
+                    <td>500000</td>
+                    <td>
+                        <button
+
+                                class="btn btn-outline-warning btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#addContractdetail">
+                              <span class="btn btn-info ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                 class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+                            </svg>
+                              </span>
+                        </button>
+                        <button
+                                class="btn btn-primary btn-outline-warning ms-3 px-3" data-bs-toggle="modal"
+                                data-bs-target="#addAttach"><span class="btn btn-info">List Attach Facility</span>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Penhouse Da Nang</td>
+                    <td>Xiaochaomeng</td>
+                    <td>09-09-2009</td>
+                    <td>10-10-2010</td>
+                    <td>200000</td>
+                    <td>300000</td>
+                    <td>
+                        <button
+
+                                class="btn btn-outline-warning btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#addContractdetail">
+                              <span class="btn btn-info ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                 class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+                            </svg>
+                              </span>
+                        </button>
+                        <button
+                                class="btn btn-primary btn-outline-warning ms-3 px-3" data-bs-toggle="modal"
+                                data-bs-target="#addAttach"><span class="btn btn-info">List Attach Facility</span>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Penhouse Dubai</td>
+                    <td>Elon must</td>
+                    <td>09-09-2009</td>
+                    <td>10-10-2010</td>
+                    <td>9999999</td>
+                    <td>9999999999</td>
                     <td>
                         <button
 
@@ -71,164 +129,25 @@
 
         </div>
 
-        <div class="modal fade" id="addContractModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <form th:action="@{/contract/save}" method="post" th:object="${contractDto}" class=" mx-3 px-3  pt-3  border border-2 border-success p-3 bg-info rounded ">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2 class="modal-title" id="addModalLabel">Add new contract</h2>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div>
-                                <label>Facility</label>
-                                <select id="facility" class="form-select" th:field="*{facility.id}">
-                                    <option th:each="item : ${facility}" th:value="${item.id}"
-                                            th:text="${item.name}"></option>
-                                </select>
-                            </div>
-                            <div>
-                                <label>Customer</label>
-                                <select id="customer" class="form-select" th:field="*{customer.id}">
-                                    <option th:each="item : ${customer}" th:value="${item.id}"
-                                            th:text="${item.name}"></option>
-                                </select>
-                            </div>
-                            <div>
-                                <label>Employee</label>
-                                <select id="employee" class="form-select" th:field="*{employee.id}">
-                                    <option th:each="item : ${employee}" th:value="${item.id}"
-                                            th:text="${item.nameEmployee}"></option>
-                                </select>
-                            </div>
-                            <div>
-                                <label>Start date</label>
-                                <input type="date" th:field="*{startDate}"/>
-                            </div>
-                            <div>
-                                <label>End date</label>
-                                <input type="date" th:field="*{endDate}"/>
-                            </div>
-                            <div>
-                                <label>Deposit</label>
-                                <input type="text" th:field="*{deposit}"/>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-danger">Save</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="modal fade" id="addContractdetail" tabindex="-1" aria-labelledby="addModalLabel1" aria-hidden="true">
-            <div class="modal-dialog">
-                <form th:action="@{/contract/create}" method="post" th:object="${contractDetail}">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2 class="modal-title" id="addModalLabel1">Add new employee</h2>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div>
-                                <label>Contract</label>
-                                <input type="text"/>
-                            </div>
-                            <div>
-                                <label>Attach facility</label>
-                                <input type="text" />
-                            </div>
-                            <div>
-                                <label>Quantity</label>
-                                <input type="text" />
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-danger">Save</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="modal fade" id="addAttach" tabindex="-1" aria-labelledby="addModalLabel2" aria-hidden="true">
-            <div class="modal-dialog">
-<!--                <form th:action="@{/contract/create}" method="post" th:object="${contractDetail}">-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2 class="modal-title" id="addModalLabel2">Add attach facility</h2>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div>
-                                <label>Name</label>
-                                <input type="text"/>
-                            </div>
-                            <div>
-                                <label>Cost</label>
-                                <input type="text" />
-                            </div>
-                            <div>
-                                <label>Status</label>
-                                <input type="text" />
-                            </div>
-                            <div>
-                                <label>Unit</label>
-                                <input type="text" />
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-danger">Save</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-
-        <div class="mt-2">
-
-            <div class="row">
-                <div class="col-5"></div>
-                <div class="col-2">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link  pages "
-                                                     th:href="@{'/contract'(page=${contract.number - 1})}"
-                                                     th:if="${contract.hasPrevious()}">Previous</a></li>
-                            <li class="page-item"><a class="page-link  pages" th:if="${contract.hasPrevious()}"
-                                                     th:href="@{'/contract'(page=${contract.number - 1})}"
-                                                     th:text="${contract.number }"></a>
-                            </li>
-
-                            <li class="page-item active">
-                                <a class="page-link pages" th:text="${contract.number + 1}"
-                                   th:href="@{'/contract'(page=${contract.number})}">
-                                    <span class="sr-only"></span></a>
-                            </li>
-
-                            <li class="page-item"><a class="page-link pages" th:if="${contract.hasNext()}"
-                                                     th:href="@{'/contract'(page=${contract.number + 1})}"
-                                                     th:text="${contract.number + 2}"></a>
-                            </li>
-                            <li class="page-item"><a class="page-link pages"
-                                                     th:href="@{'/contract'(page=${contract.number + 1})}"
-                                                     th:if="${contract.hasNext()}">Next</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-5"></div>
-            </div>
-
-        </div>
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous">
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#facilityTable').dataTable({
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 1
+        });
+    });
+</script>
+<div id="includedContent22"></div>
 </body>
 </html>
