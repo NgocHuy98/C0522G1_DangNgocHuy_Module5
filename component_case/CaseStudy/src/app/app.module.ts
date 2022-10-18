@@ -9,6 +9,11 @@ import { CustomerComponent } from './customer/customer.component';
 import { FacilityComponent } from './facility/facility.component';
 import { ContractComponent } from './contract/contract.component';
 import { NavComponent } from './nav/nav.component';
+import { EditFacilityComponent } from './edit-facility/edit-facility.component';
+import { CreateFacilityComponent } from './create-facility/create-facility.component';
+import { EditCustomerComponent } from './edit-customer/edit-customer.component';
+import { CreateCustomerComponent } from './create-customer/create-customer.component';
+import { CreateContractComponent } from './create-contract/create-contract.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +24,12 @@ import { NavComponent } from './nav/nav.component';
     CustomerComponent,
     FacilityComponent,
     ContractComponent,
-    NavComponent
+    NavComponent,
+    EditFacilityComponent,
+    CreateFacilityComponent,
+    EditCustomerComponent,
+    CreateCustomerComponent,
+    CreateContractComponent
   ],
   imports: [
     BrowserModule

@@ -11,7 +11,17 @@ body {
   background-color: #E6BB72;
   height: 100%;
   width: 100%;
+}
 
+.bgFacility{
+  background-image: url("https://img.freepik.com/free-vector/luxury-abstract-gold-background-with-shiny-elements_23-2148827898.jpg?w=2000");
+
+}
+
+.font1{
+  font-family: Arial;
+  font-size: 20px;
+  color: #A66F00;
 }
 
 a {
@@ -20,7 +30,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 h2 {
@@ -28,8 +38,9 @@ h2 {
   text-align: center;
   width: 100%;
   /*background-image: url("https://img.freepik.com/free-vector/watercolor-background-with-hand-drawn-elements_23-2148867455.jpg?w=2000");*/
-  color: black;
+  color: #0B979C;
   padding: 10px 0 10px 20px;
+  font-weight: bold
 }
 
 
@@ -81,7 +92,7 @@ input[type=text], input[type=email], input[type=date], .form-control, .form-sele
 
 input[type=submit] {
   width: 150px;
-  background-color: deeppink;
+  background-color: #FFFD1D;
   color: black;
   padding: 14px 20px;
   margin: 8px 0;
@@ -115,11 +126,13 @@ input[type=submit]:hover {
   text-align: center;
 }
 
-#form {
-  width: 300px;
+.form {
+  width: 500px;
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: #FFD8C9;
   padding: 20px;
+  margin-bottom: 30px;
+
 }
 
 .info {
