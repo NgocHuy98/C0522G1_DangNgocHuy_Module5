@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  height: 100%;
-  width: 100%;
+  /*height: 100%;*/
+  /*width: 100%;*/
+  overflow-x: hidden;
 
   /*background-image: url("https://img.freepik.com/free-vector/luxury-abstract-gold-background-with-shiny-elements_23-2148827898.jpg?w=2000");*/
 }
@@ -129,7 +130,7 @@ input[type=submit]:hover {
 .form {
   width: 500px;
   border-radius: 5px;
-  background-color: #FFD8C9;
+  background-color: #CF9D3A;
   padding: 20px;
   margin-bottom: 30px;
 
@@ -145,4 +146,10 @@ input[type=submit]:hover {
   color: blue;
 }
 
+.pHome{
+  padding: 10px 0 10px 10px;
+}
 
+.room{
+  background: #004A49;color: #F56ECC
+}

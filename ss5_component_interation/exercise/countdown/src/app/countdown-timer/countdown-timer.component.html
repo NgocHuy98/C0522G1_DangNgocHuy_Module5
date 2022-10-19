@@ -1,0 +1,11 @@
+<h1>Countdown Timer</h1>
+
+<div class="form-control">
+  <button class="btn btn-success mx-2" (click)="start()">Start</button>
+  <button class="btn btn-danger mx-2" (click)="stop()">Stop</button>
+  <button class="btn btn-dark" (click)="reset()">Reset</button>
+</div>
+<div class="timer">
+  <span class="timer-text" style="color: blue">{{ remainingTime }}</span>
+</div>
+<p>{{ message }}</p>
