@@ -1,0 +1,113 @@
+<h2 class="text-center">
+    Register
+</h2>
+<div class=" d-flex justify-content-center">
+    <div class="modal-dialog">
+        <form class="mx-5 px-5 pt-3 border border-2 border-success p-3  rounded mb-3 form "
+              method="POST" novalidate="novalidate" [formGroup]="registerFormGroup">
+            <div class="modal-content modal-body">
+
+                <div>
+                    <label>Name</label>
+                    <input type="text" formControlName="name"/>
+                </div>
+                <div class="mb-3 text-danger "
+                     *ngIf="registerFormGroup.controls.name.hasError('required')
+         && registerFormGroup.controls.name.dirty">
+                    Please input name!
+                </div>
+
+                <div>
+                    <label>Age</label>
+                    <input type="number" formArrayName="age"/>
+                </div>
+                <div class="mb-3 text-danger "
+                     *ngIf="registerFormGroup.controls.age.errors
+         && registerFormGroup.controls.age.dirty">
+                    Please input age Min 18 !
+                </div>
+
+                <div>
+                    <label>Gender</label>
+                    <div class="d-flex mt-3 mb-3">
+                        <label class="d-block me-4">
+                            <input type="radio" value="1" name="gender" formControlName="gender"> Male
+                        </label>
+                        <label class="d-block me-4">
+                            <input type="radio" value="0" name="gender" formControlName="gender"> Female
+                        </label>
+                        <label class="d-block me-4">
+                            <input type="radio" value="2" name="gender" formControlName="gender"> LGBT
+                        </label>
+                    </div>
+                </div>
+                <div formGroupName="passwordGroup">
+                    <div>
+                        <label>Password</label>
+                        <input type="password" formControlName="password"/>
+                    </div>
+                    <div class="mb3 text-danger"
+                         *ngIf="registerFormGroup.get('passwordGroup').hasError('minlength','passwordFirst')
+           && registerFormGroup.get('passwordGroup').get('passwordFirst').touched">
+                        Min 6 character !!!
+                    </div>
+                    <div class="mb3 text-danger"
+                         *ngIf="registerFormGroup.get('password').hasError('required','passwordFirst')
+           && registerFormGroup.get('password').get('passwordFirst').touched">
+                        Not empty !!!
+                    </div>
+                    <div>
+                        <label>Confirm password</label>
+                        <input type="password" formControlName="passwordConfirm"/>
+                    </div>
+
+                    <div class="mb3 text-danger"
+                         *ngIf="registerFormGroup.controls.password.hasError('notSame')
+           && registerFormGroup.controls.password.dirty">
+                        Password must equal  !!!
+                    </div>
+                </div>
+
+                <div>
+                    <label>Email</label>
+                    <input type="text" formControlName="email"/>
+
+                </div>
+                <div class="mb-3 text-danger "
+                     *ngIf="registerFormGroup.controls.email.hasError('email')
+                     && registerFormGroup.controls.email.dirty">
+                    Please input email!
+                </div>
+
+                <div>
+                    <label>Country</label>
+                    <select class="form-select" formControl="country">
+                        <option *ngFor="let  c of this.countryList" [ngValue]="c.name" ]>{{c.name}}</option>
+                    </select>
+
+                </div>
+                <div class="mb-3 text-danger "
+                     *ngIf="registerFormGroup.controls.country.hasError('required')
+         && registerFormGroup.controls.country.dirty">
+                    Please choose country!
+                </div>
+
+                <div>
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="phone" formControlName="phone"/>
+                </div>
+                <div class="mb3 text-danger"
+                     *ngIf="registerFormGroup.controls.phone.errors
+           && registerFormGroup.controls.phone.dirty">
+                    Phải nhập đúng định dạng số điện thoại và không để trống !!!
+                </div>
+
+                <button type="button" class="btn btn-primary" (click)="getValueRegister()"
+                        [disabled]="registerFormGroup.invalid">Register
+
+                </button>
+
+            </div>
+        </form>
+    </div>
+</div>

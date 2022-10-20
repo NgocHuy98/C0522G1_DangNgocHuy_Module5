@@ -86,7 +86,19 @@ h2 {
 
 }
 
-input[type=text], input[type=email], input[type=date], .form-control, .form-select {
+button[type=button]{
+  width: 150px;
+  background-color: #FFFD1D;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+input[type=text], input[type=email], input[type=number], .form-control, .form-select {
   width: 100%;
   padding: 12px 0px;
   margin: 8px 0 20px;
@@ -164,3 +176,4 @@ input[type=submit]:hover {
 .room{
   background: #004A49;color: #F56ECC
 }
+/* You can add global styles to this file, and also import other style files */

@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h2>Login Form</h2>
+    </div>
+  </div>
+  <div class="row" id="form">
+    <div class="col-lg-6 m-lg-auto" [formGroup]="loginFormGroup">
+
+      <div class="mt-3 mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" id="email" formControlName="email"/>
+      </div>
+      <div class="mb3 text-danger"
+           *ngIf="loginFormGroup.controls.email.errors
+           && loginFormGroup.controls.email.dirty">
+        Phải nhập đúng định dạng Email và không để trống !!!
+      </div>
+      <div formGroupName="password">
+        <div class="mt-3 mb-3">
+          <label for="passwordFirst" class="form-label">Password First</label>
+          <input type="password" class="form-control" id="passwordFirst" formControlName="passwordFirst"/>
+        </div>
+        <div class="mb3 text-danger"
+             *ngIf="loginFormGroup.get('password').hasError('minlength','passwordFirst')
+           && loginFormGroup.get('password').get('passwordFirst').touched">
+          Ít nhất 6 kí tự !!!
+        </div>
+        <div class="mb3 text-danger"
+             *ngIf="loginFormGroup.get('password').hasError('required','passwordFirst')
+           && loginFormGroup.get('password').get('passwordFirst').touched">
+          Không để trống !!!
+        </div>
+        <div class="mt-3 mb-3">
+          <label for="passwordSecond" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="passwordSecond" formControlName="passwordSecond"/>
+        </div>
+        <div class="mb3 text-danger"
+             *ngIf="loginFormGroup.controls.password.hasError('notSame')
+           && loginFormGroup.controls.password.dirty">
+          Password phải trùng !!!
+        </div>
+        <button style="margin-left: 100px"  type="button" class="btn btn-primary" (click)="getVelue()"
+                [disabled]="loginFormGroup.invalid">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
