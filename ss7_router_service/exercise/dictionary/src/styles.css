@@ -1,0 +1,167 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  /*height: 100%;*/
+  /*width: 100%;*/
+  overflow-x: hidden;
+
+  /*background-image: url("https://img.freepik.com/free-vector/luxury-abstract-gold-background-with-shiny-elements_23-2148827898.jpg?w=2000");*/
+}
+
+
+.myCSS {
+  background-color: #E6BB72;
+  height: 100%;
+  width: 100%;
+}
+
+.bgFacility{
+  background-image: url("https://img.freepik.com/free-vector/luxury-abstract-gold-background-with-shiny-elements_23-2148827898.jpg?w=2000");
+
+}
+
+.font1{
+  font-family: Arial;
+  font-size: 20px;
+  color: #A66F00;
+}
+
+a {
+  text-decoration: none;
+  color: deeppink;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h2 {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  /*background-image: url("https://img.freepik.com/free-vector/watercolor-background-with-hand-drawn-elements_23-2148867455.jpg?w=2000");*/
+  color: #0B979C;
+  padding: 10px 0 10px 20px;
+  font-weight: bold
+}
+
+
+.furamas {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.furamas td {
+  border: 1px solid lightsteelblue;
+  padding: 8px;
+  text-align: center;
+}
+
+.furamas tr:nth-child(even) {
+  background-color: pink;
+}
+
+.heart{
+  color: deeppink;
+}
+
+.furamas tr:hover {
+  background-color: deeppink;
+}
+
+.furamas th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  font-family: Arial;
+  background: #A66F00;
+  color: lightgoldenrodyellow;
+  border: 1px solid lightsteelblue;
+}
+
+
+.pages {
+  text-decoration: none;
+  border: darkgray;
+
+}
+
+input[type=text], input[type=email], input[type=date], .form-control, .form-select {
+  width: 100%;
+  padding: 12px 0px;
+  margin: 8px 0 20px;
+  display: inline-block;
+  border: 1px solid deeppink;
+  border-radius: 6px;
+  box-sizing: border-box;
+
+}
+
+input[type=submit] {
+  width: 150px;
+  background-color: #FFFD1D;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#customerTable{
+  text-align: center;
+}
+
+
+input[type=search] {
+  width: 200px;
+  height: 40px;
+  background-color: lightgrey;
+  color: black;
+  padding: 5px 5px;
+  margin-left: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.navbars {
+  background-image: url("https://img.freepik.com/free-vector/watercolour-background-with-leaves_91008-314.jpg?w=2000");
+}
+
+.head {
+  text-align: center;
+}
+
+.form {
+  width: 500px;
+  border-radius: 5px;
+  background-color: #CF9D3A;
+  padding: 20px;
+  margin-bottom: 30px;
+
+}
+
+.info {
+  margin: 15px 0 0 10px
+}
+
+
+.notify span {
+  font-size: 15px;
+  color: blue;
+}
+
+.pHome{
+  padding: 10px 0 10px 10px;
+}
+
+.room{
+  background: #004A49;color: #F56ECC
+}
+/* You can add global styles to this file, and also import other style files */

@@ -1,0 +1,40 @@
+<h1>Danh sách sản phẩm</h1>
+<div class="container-fluid">
+<table class="table furamas head">
+  <tr>
+    <th>STT</th>
+    <th>Tên</th>
+    <th>Giá</th>
+    <th>Mô tả</th>
+    <th>action</th>
+    <th>action</th>
+  </tr>
+  <tr *ngFor="let product of products ; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.description}}</td>
+    <td><button [routerLink]="['/product/edit',product.id]">edit</button></td>
+    <td><button style="color: black" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="getProductDelete(product)">
+      Delete
+    </button></td>
+  </tr>
+</table>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure delete <span *ngIf="productDelete">{{productDelete.name}} ?</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="delete()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

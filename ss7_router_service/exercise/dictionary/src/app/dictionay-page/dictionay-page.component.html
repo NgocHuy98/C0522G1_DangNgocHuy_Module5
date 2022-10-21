@@ -1,0 +1,18 @@
+<h2>Dictionary</h2>
+<div class="mx-5 mt-3 px-5">
+<table class="furamas "  >
+  <tr>
+    <th>STT</th>
+    <th>Word</th>
+    <th>Detail</th>
+  </tr>
+
+  <tr *ngFor="let word of this.wordList; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{word.word}}</td>
+    <td><a routerLink="/detail/{{word.word}}">Detail</a></td>
+  </tr>
+</table>
+</div>
+
+
