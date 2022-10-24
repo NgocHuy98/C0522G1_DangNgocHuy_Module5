@@ -1,0 +1,65 @@
+{
+  "product": [
+    {
+      "id": 2,
+      "name": "Bánh bông lan",
+      "price": "50000",
+      "description": "Mới",
+      "category": {
+        "id": 1,
+        "name": "Bánh "
+      }
+    },
+    {
+      "id": 3,
+      "name": "Bánh quế",
+      "price": "50000",
+      "description": "Mới",
+      "category": {
+        "id": 2,
+        "name": "Kẹo "
+      }
+    },
+    {
+      "id": 4,
+      "name": "Bánh chocolate",
+      "price": "40000",
+      "description": "Mới",
+      "category": {
+        "id": 3,
+        "name": "Nước "
+      }
+    },
+    {
+      "id": 5,
+      "name": "12",
+      "price": 21,
+      "description": "21",
+      "category": "1"
+    },
+    {
+      "id": "1",
+      "name": "211",
+      "price": 1212,
+      "description": "211",
+      "category": {
+        "id": 1,
+        "name": "Bánh "
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Bánh "
+    },
+    {
+      "id": 2,
+      "name": "Kẹo "
+    },
+    {
+      "id": 3,
+      "name": "Nước "
+    }
+  ]
+}

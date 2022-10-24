@@ -34,4 +34,5 @@ export class DictionaryService {
   findAll(): IWord[] {
     return this.wordList;
   }
+
 }

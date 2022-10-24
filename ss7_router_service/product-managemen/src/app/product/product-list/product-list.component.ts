@@ -28,7 +28,7 @@ export class ProductListComponent implements OnInit {
     this.router.navigate(['/product/list']);
   }
 
-  getProductDelete(item: any) : void{
+  getProductDelete(item: any): void {
     this.productDelete = item;
   }
 }

@@ -5,15 +5,16 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { CustomerComponent } from './customer/customer.component';
-import { FacilityComponent } from './facility/facility.component';
 import { ContractComponent } from './contract/contract.component';
 import { NavComponent } from './nav/nav.component';
-import { EditFacilityComponent } from './edit-facility/edit-facility.component';
-import { CreateFacilityComponent } from './create-facility/create-facility.component';
-import { EditCustomerComponent } from './edit-customer/edit-customer.component';
-import { CreateCustomerComponent } from './create-customer/create-customer.component';
 import { CreateContractComponent } from './create-contract/create-contract.component';
+import { FacilityModule } from './facility.module';
+import {ListFacilityComponent} from './facility/list-facility/list-facility.component';
+import {EditFacilityComponent} from './facility/edit-facility/edit-facility.component';
+import {CreateFacilityComponent} from './facility/create-facility/create-facility.component';
+import {EditCustomerComponent} from './customer/edit-customer/edit-customer.component';
+import {CreateCustomerComponent} from './customer/create-customer/create-customer.component';
+import {ListCustomerComponent} from './customer/list-customer/list-customer.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,8 @@ import { CreateContractComponent } from './create-contract/create-contract.compo
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    CustomerComponent,
-    FacilityComponent,
+    ListCustomerComponent,
+    ListFacilityComponent,
     ContractComponent,
     NavComponent,
     EditFacilityComponent,
@@ -32,7 +33,8 @@ import { CreateContractComponent } from './create-contract/create-contract.compo
     CreateContractComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FacilityModule
   ],
   providers: [],
   bootstrap: [AppComponent]
