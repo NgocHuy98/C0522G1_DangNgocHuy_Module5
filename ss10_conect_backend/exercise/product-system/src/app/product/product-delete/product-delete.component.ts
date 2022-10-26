@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {Product} from '../../model/product';
-import {ProductService} from '../../service/product.service';
+import {Product} from '../product';
+import {ProductService} from '../product.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
@@ -22,7 +22,7 @@ export class ProductDeleteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = Number(this.activatedRoute.snapshot.params.productId);
+    const id = Number(this.activatedRoute.snapshot.params.id);
     this.productService.findById(id).subscribe(value => {
       this.productForm = new FormGroup({
         id: new FormControl(),

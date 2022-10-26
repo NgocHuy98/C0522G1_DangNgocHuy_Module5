@@ -1,16 +1,6 @@
 {
   "product": [
     {
-      "id": 2,
-      "name": "Bánh bông lan",
-      "price": "50000",
-      "description": "Mới",
-      "category": {
-        "id": 1,
-        "name": "Bánh "
-      }
-    },
-    {
       "id": 3,
       "name": "Bánh quế",
       "price": "50000",
@@ -35,7 +25,10 @@
       "name": "12",
       "price": 21,
       "description": "21",
-      "category": "1"
+      "category": {
+        "id": 3,
+        "name": "Bánh "
+      }
     },
     {
       "id": "1",

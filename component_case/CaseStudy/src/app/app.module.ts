@@ -14,6 +14,9 @@ import {CreateCustomerComponent} from './customer/create-customer/create-custome
 import {ListCustomerComponent} from './customer/list-customer/list-customer.component';
 import { ListContractComponent } from './contract/list-contract/list-contract.component';
 import {CreateContractComponent} from './contract/create-contract/create-contract.component';
+import { AppRoutingModule } from './app-routing.module';
+import {RouterModule} from '@angular/router';
+import { CustomerRoutingModule } from './customer/create-customer/customer-routing.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import {CreateContractComponent} from './contract/create-contract/create-contrac
     ListContractComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule,
+    CustomerRoutingModule
 
   ],
   providers: [],

@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {Category} from '../../model/category';
-import {CategoryService} from '../../service/category.service';
-import {ProductService} from '../../service/product.service';
+import {Category} from '../../category/category';
+import {CategoryService} from '../../category/category.service';
+import {ProductService} from '../product.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
-import {Product} from '../../model/product';
+import {Product} from '../product';
 
 @Component({
   selector: 'app-product-edit',
@@ -31,10 +31,14 @@ export class ProductEditComponent implements OnInit {
   //   description: new FormControl(),
   //   category: new FormControl()
   // });
+  compareWithId(item1, item2) {
+    return item1 && item2 && item1.id === item2.id;
+  }
 
   ngOnInit(): void {
-    const id = Number(this.activatedRoute.snapshot.params.productId);
+    const id = Number(this.activatedRoute.snapshot.params.id);
     this.productService.findById(id).subscribe(value => {
+      console.log(value);
       this.productForm.patchValue(value);
     });
     this.productForm = new FormGroup({
@@ -60,5 +64,6 @@ export class ProductEditComponent implements OnInit {
       this.router.navigateByUrl('list');
     });
   }
+
 
 }

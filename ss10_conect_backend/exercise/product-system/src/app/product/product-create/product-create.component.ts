@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {CategoryService} from '../../service/category.service';
-import {ProductService} from '../../service/product.service';
+import {CategoryService} from '../../category/category.service';
+import {ProductService} from '../product.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
-import {Category} from '../../model/category';
+import {Category} from '../../category/category';
 
 @Component({
   selector: 'app-product-create',

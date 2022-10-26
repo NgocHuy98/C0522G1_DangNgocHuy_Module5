@@ -13,24 +13,21 @@ import {HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
 import { CategoryEditComponent } from './category/category-edit/category-edit.component';
 import { CategoryListComponent } from './category/category-list/category-list.component';
+import {CategoryModule} from './category/category.module';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ProductCreateComponent,
-    ProductEditComponent,
-    ProductListComponent,
-    ProductDeleteComponent,
-    CategoryEditComponent,
-    CategoryListComponent
-  ],
+    AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ProductRoutingModule,
     ProductModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CategoryModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

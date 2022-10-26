@@ -4,7 +4,7 @@
     <div class="row mt-2">
       <div class="col-2">
         <button class="btn btn-success ">
-          <a style="text-decoration: none ;color: white" href="@{/customer/create}">
+          <a style="text-decoration: none ;color: white" routerLink="/create">
             Add new customer
           </a>
         </button>
@@ -71,7 +71,7 @@
           <td>{{cus.phoneNumber}}</td>
           <td>{{cus.email}}</td>
           <td>{{cus.address}}</td>
-          <td><a href="@{/customer/{id}/edit(id=${row.id})}" class="btn btn-warning ">
+          <td><a routerLink="/edit" class="btn btn-warning ">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
                  class="bi bi-pen" viewBox="0 0 16 16">
               <path
@@ -99,3 +99,5 @@
 
   </div>
 </div>
+
+

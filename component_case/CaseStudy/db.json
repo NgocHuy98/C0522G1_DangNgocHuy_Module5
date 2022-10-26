@@ -1,0 +1,120 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "Neymar Jr",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond "
+      },
+      "dateOfBirth": "01-01-1998",
+      "gender": "1",
+      "idCard": "012345678",
+      "phoneNumber": "090123456",
+      "email": "123@gmail.com",
+      "address": "Brazil"
+    },
+    {
+      "id": 2,
+      "name": "Faker",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond "
+      },
+      "dateOfBirth": "01-01-1997",
+      "gender": "1",
+      "idCard": "012345678",
+      "phoneNumber": "090123456",
+      "email": "123@gmail.com",
+      "address": "Korea"
+    },
+    {
+      "id": 3,
+      "name": "Huy Jr",
+      "customerType": {
+        "id": 2,
+        "name": "Gold "
+      },
+      "dateOfBirth": "01-01-1998",
+      "gender": "1",
+      "idCard": "012345678",
+      "phoneNumber": "090123456",
+      "email": "123@gmail.com",
+      "address": "Viet Nam"
+    },
+    {
+      "id": 4,
+      "name": "Hoang",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond "
+      },
+      "dateOfBirth": "01-01-1998",
+      "gender": "1",
+      "idCard": "012345678",
+      "phoneNumber": "090123456",
+      "email": "123@gmail.com",
+      "address": "Brazil"
+    },
+    {
+      "id": 5,
+      "name": "Hieu",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond "
+      },
+      "dateOfBirth": "01-01-1998",
+      "gender": "1",
+      "idCard": "012345678",
+      "phoneNumber": "090123456",
+      "email": "123@gmail.com",
+      "address": "Brazil"
+    },
+    {
+      "id": 6,
+      "name": "Nam",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond "
+      },
+      "dateOfBirth": "01-01-1998",
+      "gender": "1",
+      "idCard": "012345678",
+      "phoneNumber": "090123456",
+      "email": "123@gmail.com",
+      "address": "Brazil"
+    },
+    {
+      "id": 7,
+      "name": "Tuan",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond "
+      },
+      "dateOfBirth": "01-01-1998",
+      "gender": "1",
+      "idCard": "012345678",
+      "phoneNumber": "090123456",
+      "email": "123@gmail.com",
+      "address": "Brazil"
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond "
+    },
+    {
+      "id": 2,
+      "name": "Gold "
+    },
+    {
+      "id": 3,
+      "name": "Silver "
+    },
+    {
+      "id": 4,
+      "name": "Bronze "
+    }
+  ]
+}
