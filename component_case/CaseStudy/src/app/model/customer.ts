@@ -1,6 +1,9 @@
+import {CustomerType} from './contract/model/customer-type';
+
 export class Customer {
+  id: number;
   name: string;
-  customerType: number;
+  customerType: CustomerType;
   dateOfBirth: string;
   gender: number;
   idCard: string;
@@ -8,8 +11,9 @@ export class Customer {
   email: string;
   address: string;
 
-  constructor(name: string, customerType: number, dateOfBirth: string, gender: number,
-              idCard: string, phoneNumber: string, email: string, address: string) {
+  constructor(id: number, name: string, customerType: CustomerType, dateOfBirth: string,
+              gender: number, idCard: string, phoneNumber: string, email: string, address: string) {
+    this.id = id;
     this.name = name;
     this.customerType = customerType;
     this.dateOfBirth = dateOfBirth;

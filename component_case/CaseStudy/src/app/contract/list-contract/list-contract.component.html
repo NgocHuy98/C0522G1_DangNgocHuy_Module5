@@ -1,82 +1,65 @@
-<div class="container-fluid bgFacility">
-  <h2>CONTRACT LIST</h2>
-  <div class="mx-lg-2">
-    <div class="row mt-2">
-      <div class="col-4">
-        <button class="btn btn-success" data-bs-toggle="modal"
-                data-bs-target="#addContractModal">
-          <span>Add new contract</span>
-        </button>
-      </div>
+<div class="bgFacility">
+  <div class="px-5">
 
-      <div class="col-8 notify">
+      <h2>DANH SÁCH HỢP ĐỒNG</h2>
 
-      </div>
-    </div>
+      <nav class="navbar navbar-expand-lg py-0 my-0 pb-2">
+        <div class="container-fluid">
+          <a routerLink="/contract/create">
+            <button class="btn btn-primary btn-outline-secondary">
+              <span class="fa-solid fa-plus text-light h6 my-auto me-1"></span>
+              <span class="text-light"> Thêm mới hợp đồng</span>
+            </button>
+          </a>
+        </div>
+      </nav>
 
-    <div class="mt-2">
-      <table id="facilityTable" class="furamas">
+      <table class="furamas" id="customerTable">
         <thead>
         <tr>
-          <th>Index</th>
-          <th>Facility</th>
-          <th>Customer</th>
-          <th>Start Date</th>
-          <th>End Date</th>
-          <th>Deposit</th>
-          <th>Total Money</th>
-          <th>Attach Facilities</th>
-
+          <th>STT</th>
+          <th>Tên khách hàng</th>
+          <th>Tên dịch vụ</th>
+          <th>Ngày làm hợp đồng</th>
+          <th>Ngày kết thúc hợp đồng</th>
+          <th>Tiền đặt cọc</th>
+          <th>Tổng tiền</th>
         </tr>
         </thead>
-        <tbody>
-        <tr>
-          <td>1</td>
-          <td>Penhouse Da Lat</td>
-          <td>Neymar Jr</td>
-          <td>09-09-2009</td>
-          <td>10-10-2010</td>
-          <td>100000</td>
-          <td>500000</td>
-          <td>
-            <button
 
-              class="btn btn-outline-warning btn-primary" data-bs-toggle="modal"
-              data-bs-target="#addContractdetail">
-                              <span class="btn btn-info ">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                 class="bi bi-plus-square-fill" viewBox="0 0 16 16">
-                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
-                            </svg>
-                              </span>
-            </button>
-            <button
-              class="btn btn-primary btn-outline-warning ms-3 px-3" data-bs-toggle="modal"
-              data-bs-target="#addAttach"><span class="btn btn-info">List Attach Facility</span>
-            </button>
-          </td>
+        <tbody>
+        <tr *ngFor="let item of customerListPaging; index as i">
+          <td>{{i + 1 + (curPage - 1) * 5 }}</td>
+          <td>{{item.customer.name}}</td>
+          <td>{{item.facility.facilityName}}</td>
+          <td >{{item.startDate | date: "dd/MM/yyyy"}}</td>
+          <td>{{item.endDate | date: "dd/MM/yyyy"}}</td>
+          <td>{{item.deposit | currency: "VND"}}</td>
+          <td>{{item.deposit + item.facility.rentCost | currency: "VND"}}</td>
         </tr>
         </tbody>
       </table>
 
-    </div>
+      <nav aria-label="..." class="justify-content-center d-flex">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" (click)="previos()" *ngIf="curPage > 1">&laquo; Trang trước</a>
+          </li>
+          <li class="page-item disabled" *ngIf="curPage <= 1">
+            <a class="page-link">&laquo;</a>
+          </li>
+
+          <li class="page-item"><a class="page-link disabled" href="" [text]="curPage + ' / ' + totalPage"></a>
+          </li>
+
+          <li class="page-item">
+            <a class="page-link" (click)="next()" *ngIf="curPage < totalPage">Trang sau &raquo;</a>
+          </li>
+          <li class="page-item disabled" *ngIf="curPage >= totalPage">
+            <a class="page-link">&raquo;</a>
+          </li>
+        </ul>
+      </nav>
 
   </div>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous">
-</script>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-<script>
-  $(document).ready(function () {
-    $('#facilityTable').dataTable({
-      "dom": 'lrtip',
-      "lengthChange": false,
-      "pageLength": 1
-    });
-  });
-</script>

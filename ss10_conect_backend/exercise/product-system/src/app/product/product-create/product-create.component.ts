@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CategoryService} from '../../category/category.service';
 import {ProductService} from '../product.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Category} from '../../category/category';
 
 @Component({
@@ -21,11 +21,10 @@ export class ProductCreateComponent implements OnInit {
   }
 
   productForm: FormGroup = new FormGroup({
-    id: new FormControl(),
-    name: new FormControl(),
-    price: new FormControl(),
-    description: new FormControl(),
-    category: new FormControl()
+    name: new FormControl('', Validators.required),
+    price: new FormControl('', Validators.required),
+    description: new FormControl('', [Validators.required, Validators.pattern('^\\d{9}$|^\\d{12}$')]),
+    category: new FormControl('', Validators.required)
   });
 
   ngOnInit(): void {

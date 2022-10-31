@@ -1,0 +1,78 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "customerName": "Võ Văn Tý"
+    },
+    {
+      "id": 2,
+      "customerName": "Hồ Thị Thủy Lợi"
+    },
+    {
+      "id": 3,
+      "customerName": "Hồ Minh Trí"
+    },
+    {
+      "id": 4,
+      "customerName": "Hồ Thị Thủy Tiên"
+    },
+    {
+      "id": 5,
+      "customerName": "Đặng Ngọc Huy"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "dateOpen": "2022-11-20",
+      "timeStart": "2022-11-20",
+      "timesOut": "2023-11-20",
+      "sendMoney": 10000000,
+      "interested": 0.5,
+      "free": "áo mưa",
+      "customer": {
+        "id": 1,
+        "customerName": "Võ Văn Tý"
+      }
+    },
+    {
+      "id": 3,
+      "dateOpen": "2022-11-20",
+      "timeStart": "2022-12-20",
+      "timesOut": "2023-12-20",
+      "sendMoney": 20000000,
+      "interested": 0.7,
+      "free": "áo mưa",
+      "customer": {
+        "id": 3,
+        "customerName": "Hồ Minh Trí"
+      }
+    },
+    {
+      "id": 4,
+      "dateOpen": "2022-11-20",
+      "timeStart": "2022-11-20",
+      "timesOut": "2023-11-20",
+      "sendMoney": 20000000,
+      "interested": 0.5,
+      "free": "áo mưa",
+      "customer": {
+        "id": 4,
+        "customerName": "Hồ Thị Thủy Tiên"
+      }
+    },
+    {
+      "id": 5,
+      "dateOpen": "2022-11-20",
+      "timeStart": "2022-12-20",
+      "timesOut": "2023-12-20",
+      "sendMoney": 10000000,
+      "interested": 0.5,
+      "free": "áo mưa",
+      "customer": {
+        "id": 5,
+        "customerName": "Đặng Ngọc Huy"
+      }
+    }
+  ]
+}

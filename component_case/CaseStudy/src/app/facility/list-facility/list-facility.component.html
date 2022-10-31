@@ -1,226 +1,100 @@
-<button class="btn btn-success mt-2 ">
-  <a style="text-decoration: none ;color: white" href="create.html">
-    Add new facility
-  </a>
-</button>
+<div class="bgFacility">
+<div class="py-3 px-5">
+  <div class="px-5">
+    <h2 >DANH SÁCH DỊCH VỤ </h2>
 
+    <nav class="navbar navbar-expand-lg py-0 my-0">
+      <div class="container-fluid">
+        <a routerLink="/facility/create">
+          <button class="btn btn-primary btn-outline-secondary">
+            <span class="fa-solid fa-house-medical text-light h5 my-auto me-1"></span>
+            <span class="text-light"> Thêm mới dịch vụ</span>
+          </button>
+        </a>
 
-<div class="container-fluid mx-2">
-  <h2>FACILITY LIST</h2>
+        <div class="d-flex my-2" role="search">
+          <input class="form-control me-2" type="text" placeholder="Nhập tên dịch vụ.." aria-label="Search"
+                 [(ngModel)]="facilityNameSearch">
+          <button class="btn btn-light btn-outline-primary search1" (click)="searchName()">
+            <i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      </div>
+    </nav>
 
-  <!--    <p>-->
-  <!--        <a href="index1.html">-->
-  <!--            Back to facility list-->
-  <!--        </a>-->
-  <!--    </p>-->
-
-  <table id="facilityTable1" class="container">
-
-    <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-
-    </tr>
-    </thead>
-    <tbody>
-
-    <tr>
-      <td>
-        <div class="card shadow  " style="width: 17rem;margin: auto">
-          <img style="height: 200px"
-               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUc7XJDl8kLom92SNfOWCO361c7_oNE54gWA&usqp=CAU"
+    <div class="row">
+      <div class="col-sm-4 mb-4" *ngFor="let item of facilityListPaging">
+        <div class="card facilityCSS">
+          <img height="250px"
+               src="{{item.facilityImage}}"
                class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-          <div class="card-body">
-            <a href="edit.html" class="card-link btn btn-primary">UPDATE</a>
-            <a style="margin-left: 50px" href="#" role="button"
-               class="card-link btn btn-danger">DELETE</a>
-          </div>
-        </div>
-
-      </td>
-
-      <td>
-        <div class="card shadow  " style="width: 17rem;margin: auto">
-          <img style="height: 200px"
-               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzHGQhT1Vps9-Hv7z7tflDz3PxpN9d2NS9MA&usqp=CAU"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-          <div class="card-body">
-            <a href="#" class="card-link btn btn-primary">UPDATE</a>
-            <a style="margin-left: 50px" href="#" role="button"
-               class="card-link btn btn-danger">DELETE</a>
+            <h5 class="card-title">{{item.facilityName | uppercase}}</h5>
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <span class="card-text">Loại dịch vụ: {{item.facilityType.facilityTypeName | uppercase}}</span><br>
+                <span class="card-text">Diện tích: {{item.facilityArea}} m<sup>2</sup></span><br>
+                <span class="card-text">Chí phí thuê: {{item.rentCost | currency: "VND"}}</span>
+              </div>
+              <div class="col-sm-6">
+                <span class="card-text">Số người tối đa: {{item.maxPeople}}</span><br>
+                <span class="card-text">Kiểu thuê: {{item.rentType.rentTypeName}}</span>
+              </div>
+            </div>
+            <a routerLink="/facility/edit/{{item.id}}" class="me-2">
+              <button class="btn btn-info btn-outline-secondary text-dark">Sửa</button>
+            </a>
+            <button class="btn btn-danger btn-outline-secondary text-light"
+                    data-bs-toggle="modal" data-bs-target="#deleteFacility"
+                    (click)="getInfoFacilityDelete(item.facilityImage, item.facilityName, item.id)">Xóa
+            </button>
           </div>
         </div>
+      </div>
+    </div>
 
-      </td>
+    <nav aria-label="..." class="justify-content-center d-flex">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" (click)="previos()" *ngIf="curPage > 1">&laquo; Trang trước</a>
+        </li>
+        <li class="page-item disabled" *ngIf="curPage <= 1">
+          <a class="page-link">&laquo;</a>
+        </li>
 
+        <li class="page-item"><a class="page-link disabled" href=""
+                                 [text]="curPage + ' / ' + totalPage"  *ngIf="curPage <= totalPage"></a>
+        </li>
 
-      <td>
-        <div class="card shadow  " style="width: 17rem;margin: auto">
-          <img style="height: 200px"
-               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUc7XJDl8kLom92SNfOWCO361c7_oNE54gWA&usqp=CAU"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-          <div class="card-body">
-            <a href="#" class="card-link btn btn-primary">UPDATE</a>
-            <a style="margin-left: 50px" href="#" role="button"
-               class="card-link btn btn-danger">DELETE</a>
-          </div>
-        </div>
-      </td>
-
-
-      <td>
-        <div class="card shadow  " style="width: 17rem;margin: auto">
-          <img style="height: 200px"
-               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxljL83gT8h1qZYds2CgNpJtB0Bfwy9f6iqQ&usqp=CAU"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-          <div class="card-body">
-            <a href="#" class="card-link btn btn-primary">UPDATE</a>
-            <a style="margin-left: 50px" href="#" role="button"
-               class="card-link btn btn-danger">DELETE</a>
-          </div>
-        </div>
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-        <div class="card shadow  " style="width: 17rem;margin: auto">
-          <img style="height: 200px"
-               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxljL83gT8h1qZYds2CgNpJtB0Bfwy9f6iqQ&usqp=CAU"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-          <div class="card-body">
-            <a href="#" class="card-link btn btn-primary">UPDATE</a>
-            <a style="margin-left: 50px" href="#" role="button"
-               class="card-link btn btn-danger">DELETE</a>
-          </div>
-        </div>
-
-      </td>
-
-      <td>
-
-        <div class="card shadow  " style="width: 17rem;margin: auto">
-          <img style="height: 200px"
-               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgF9Ed18EEHpNxdcygSzD2M_COc0b6cClnng&usqp=CAU"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-          <div class="card-body">
-            <a href="#" class="card-link btn btn-primary">UPDATE</a>
-            <a style="margin-left: 50px" href="#" role="button"
-               class="card-link btn btn-danger">DELETE</a>
-          </div>
-        </div>
-
-      </td>
-      <td>
-
-        <div class="card shadow  " style="width: 17rem;margin: auto">
-          <img style="height: 200px"
-               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJd3s47ymJIvsBmBptMYL7H8F_n-DnLoJHYB9EkVJYXvyiox8NnvO4SSgGYwPZhREJbL0&usqp=CAU"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-          <div class="card-body">
-            <a href="#" class="card-link btn btn-primary">UPDATE</a>
-            <a style="margin-left: 50px" href="#" role="button"
-               class="card-link btn btn-danger">DELETE</a>
-          </div>
-        </div>
-
-      </td>
-      <td>
-
-        <div class="card shadow  " style="width: 17rem;margin: auto">
-          <img style="height: 200px"
-               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeewEsJUg5idz9k-WSAMrn74YpZ_s6txjGsreXf3Sw1QVMuMLjSj7_91743G9sWRQYQ-M&usqp=CAU"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-          <div class="card-body">
-            <a href="#" class="card-link btn btn-primary">UPDATE</a>
-            <a style="margin-left: 50px" href="#" role="button"
-               class="card-link btn btn-danger">DELETE</a>
-          </div>
-        </div>
-
-      </td>
-    </tr>
-    </tbody>
-
-  </table>
+        <li class="page-item">
+          <a class="page-link" (click)="next()" *ngIf="curPage < totalPage">Trang sau &raquo;</a>
+        </li>
+        <li class="page-item disabled" *ngIf="curPage >= totalPage">
+          <a class="page-link">&raquo;</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
 
+<div class="modal fade" id="deleteFacility" tabindex="-1" aria-labelledby="exampleModalLabel1"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modalCSS">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel1">Bạn có chắc chắn muốn xóa?</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
 
+      <div class="modal-body">
+        <img class="img-fluid pb-3" src="{{facilityImageDelete}}" alt="...">
+        <span class="h6">Dịch vụ:</span><strong class="text-danger ps-2">{{facilityNameDelete | uppercase}}</strong>
+      </div>
 
-
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteFacility()">Xóa</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

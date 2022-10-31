@@ -4,7 +4,7 @@
       "id": 3,
       "name": "Bánh quế",
       "price": "50000",
-      "description": "Mới",
+      "description": "",
       "category": {
         "id": 2,
         "name": "Kẹo "

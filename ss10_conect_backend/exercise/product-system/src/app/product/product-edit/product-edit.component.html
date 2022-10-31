@@ -16,6 +16,14 @@
     <tr>
       <td>Mô tả về sản phẩm</td>
       <td><input type="text" formControlName="description"></td>
+      <td class="alert alert-danger" role="alert"
+          *ngIf="productForm.controls.description.hasError('required') &&
+                      productForm.controls.description.touched">
+        Số CMND/CCCD không được để trống!</td>
+      <td class="alert alert-danger" role="alert"
+          *ngIf="productForm.controls.description.hasError('pattern') &&
+                      productForm.controls.description.touched">
+        CMND/CCCD phải đúng định dạng XXXXXXXXX hoặc XXXXXXXXXXXX (X là số 0-9)!</td>
     </tr>
     <tr>
       <td>Danh mục sản phẩm</td>
