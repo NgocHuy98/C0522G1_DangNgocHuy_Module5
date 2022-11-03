@@ -35,14 +35,14 @@
             <label>Customer type</label>
 
             <div class="input-group">
-              <select id="customerType" class="form-select" formControlName="customerTypeId" [compareWith]="compareWithId">
+              <select id="customerType" class="form-select" formControlName="customerType" [compareWith]="compareWithId">
                 <option value="" disabled>Chọn loại khách hàng..</option>
                 <option *ngFor="let item of customerTypeList" [ngValue]="item">{{item.name}}</option>
               </select>
             </div>
             <div class="alert alert-danger" role="alert"
-                 *ngIf="customerFormGroup.controls.customerTypeId.hasError('required') &&
-                      customerFormGroup.controls.customerTypeId.touched">
+                 *ngIf="customerFormGroup.controls.customerType.hasError('required') &&
+                      customerFormGroup.controls.customerType.touched">
               Vui lòng chọn loại khách!
             </div>
 

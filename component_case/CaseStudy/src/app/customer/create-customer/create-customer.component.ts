@@ -21,7 +21,7 @@ export class CreateCustomerComponent implements OnInit {
     phone: new FormControl('', [Validators.required, Validators.pattern('(0|[(]84[)][+])9[01]\\d{7}')]),
     email: new FormControl('', [Validators.required, Validators.email]),
     address: new FormControl('', Validators.required),
-    customerTypeId: new FormControl('', Validators.required)
+    customerType: new FormControl('', Validators.required)
   });
 
 
@@ -53,7 +53,7 @@ export class CreateCustomerComponent implements OnInit {
     }, error => {
       console.log(error);
     }, () => {
-      this.router.navigateByUrl('customer/');
+      this.router.navigateByUrl('customer');
       console.log('Thêm mới khách hàng thành công!');
     });
   }

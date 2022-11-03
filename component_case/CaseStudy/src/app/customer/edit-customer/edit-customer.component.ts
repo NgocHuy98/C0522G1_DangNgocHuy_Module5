@@ -43,7 +43,7 @@ export class EditCustomerComponent implements OnInit {
         phone: new FormControl(customer.phone, [Validators.required, Validators.pattern('(0|[(]84[)][+])9[01]\\d{7}')]),
         email: new FormControl(customer.email, [Validators.required, Validators.email]),
         address: new FormControl(customer.address, Validators.required),
-        customerTypeId: new FormControl(customer.customerTypeId, Validators.required)
+        customerType: new FormControl(customer.customerType, Validators.required)
       });
     }, error => {
       console.log(error);
@@ -64,7 +64,7 @@ export class EditCustomerComponent implements OnInit {
         timer: 2500
       });
 
-      this.router.navigateByUrl('customer/list');
+      this.router.navigateByUrl('customer');
     }, error => {
       console.log(error);
     }, () => {
