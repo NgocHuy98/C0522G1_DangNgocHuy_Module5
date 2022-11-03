@@ -6,15 +6,17 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {EditCustomerComponent} from './edit-customer/edit-customer.component';
 import {CreateCustomerComponent} from './create-customer/create-customer.component';
 import {ListCustomerComponent} from './list-customer/list-customer.component';
+import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
-  declarations: [ListCustomerComponent, EditCustomerComponent, CreateCustomerComponent],
-  imports: [
-    CommonModule,
-    CustomerRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
-  ]
+  declarations: [ListCustomerComponent, CreateCustomerComponent, EditCustomerComponent],
+    imports: [
+        CommonModule,
+        CustomerRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NgbPaginationModule
+    ]
 })
 export class CustomerModule { }

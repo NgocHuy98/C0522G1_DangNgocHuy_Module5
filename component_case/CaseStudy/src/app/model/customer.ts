@@ -1,25 +1,26 @@
-import {CustomerType} from './contract/model/customer-type';
+import {CustomerType} from './customer-type';
+
 
 export class Customer {
   id: number;
   name: string;
-  customerType: CustomerType;
+  customerTypeId: CustomerType;
   dateOfBirth: string;
   gender: number;
   idCard: string;
-  phoneNumber: string;
+  phone: string;
   email: string;
   address: string;
 
-  constructor(id: number, name: string, customerType: CustomerType, dateOfBirth: string,
-              gender: number, idCard: string, phoneNumber: string, email: string, address: string) {
+  constructor(id: number, name: string, customerTypeId: CustomerType, dateOfBirth: string,
+              gender: number, idCard: string, phone: string, email: string, address: string) {
     this.id = id;
     this.name = name;
-    this.customerType = customerType;
+    this.customerTypeId = customerTypeId;
     this.dateOfBirth = dateOfBirth;
     this.gender = gender;
     this.idCard = idCard;
-    this.phoneNumber = phoneNumber;
+    this.phone = phone;
     this.email = email;
     this.address = address;
   }

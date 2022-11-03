@@ -6,8 +6,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {NavComponent} from './nav/nav.component';
 import { BookCreateComponent } from './customer/book-create/book-create.component';
-import { BookEditComponent } from './customer/book-edit/book-edit.component';
 import { BookListComponent } from './customer/book-list/book-list.component';
+import {BookEditComponent} from './customer/book-edit/book-edit.component';
 
 @NgModule({
     declarations: [

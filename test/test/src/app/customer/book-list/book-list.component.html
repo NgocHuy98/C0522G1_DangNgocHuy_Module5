@@ -12,12 +12,12 @@
         </a>
 
         <div class="d-flex my-2" role="search">
-<!--          <input class="form-control me-2 search" type="text" placeholder="Nhập tên.." aria-label="Search"-->
-<!--                 [(ngModel)]="customerSearch.customerName">-->
-<!--          <select class="form-select me-2 search " [(ngModel)]="bookListPaging" [compareWith]="compareWithId">-->
-<!--            <option value="{{bookListPaging}}" disabled> ID..</option>-->
-<!--            <option *ngFor="let item of customerList" [ngValue]="item">{{item.id}}</option>-->
-<!--          </select>-->
+          <input class="form-control me-2 search" type="text" placeholder="Nhập tên.." aria-label="Search"
+                 [(ngModel)]="customerSearch.customerName">
+          <select class="form-select me-2 search " [(ngModel)]="bookListPaging" [compareWith]="compareWithId">
+            <option value="{{bookListPaging}}" disabled > ID..</option>
+            <option *ngFor="let item of bookListPaging" [ngValue]="item">{{item.id}}</option>
+          </select>
           <button class="btn btn-light btn-outline-primary search1" (click)="searchByMore()">
             <i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
@@ -112,7 +112,7 @@
         </div>
 
         <div class="modal-body">
-          <span class="h6">Khách hàng:</span><strong class="text-danger ps-2">{{bookIdDelete}}</strong>
+          <span class="h6">Mã số sổ:</span><strong class="text-danger ps-2">{{bookIdDelete}}</strong>
         </div>
 
         <div class="modal-footer">

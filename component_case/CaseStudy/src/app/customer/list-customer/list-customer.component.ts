@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {CustomerService} from '../../service/customer.service';
+import {CustomerService} from '../customer.service';
 import {Customer} from '../../model/customer';
 import Swal from 'sweetalert2';
+import {BehaviorSubject, Observable} from 'rxjs';
 
 
 @Component({
@@ -10,17 +11,25 @@ import Swal from 'sweetalert2';
   styleUrls: ['./list-customer.component.css']
 })
 export class ListCustomerComponent implements OnInit {
-  customerList: Customer[];
-  customerListPaging: Customer[];
-  curPage = 1;
-  totalPage: number;
+  page = 1;
+  pageSize = 4;
+  customer$: Observable<Customer[]>;
+  total$: Observable<number>;
 
   customerNameDelete: string;
+
   customerIdDelete: number;
 
   customerNameSearch = '';
-  customerAddressSearch = '';
-  customerPhoneSearch = '';
+  //
+  // customerList: Customer[];
+  // customerListPaging: Customer[];
+  // curPage = 1;
+  // totalPage: number;
+
+
+  // customerAddressSearch = '';
+  // customerPhoneSearch = '';
 
   mess: string;
 
@@ -28,28 +37,18 @@ export class ListCustomerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.customerService.findAllCustomer().subscribe(value => {
-      this.totalPage = Math.ceil(value.length / 5);
-      this.customerListPaging = value.slice(0, 5);
-      this.customerList = value;
-    }, error => {
-      console.log(error);
-    }, () => {
-      console.log('Hiển thị danh sách khách hàng!');
-    });
-
-    this.mess = '';
+    this.searchByMore();
   }
 
-  next(): void {
-    this.curPage++;
-    this.customerListPaging = this.customerList.slice((this.curPage - 1) * 5, this.curPage * 5);
-  }
-
-  previos(): void {
-    this.curPage--;
-    this.customerListPaging = this.customerList.slice((this.curPage - 1) * 5, this.curPage * 5);
-  }
+  // next(): void {
+  //   this.curPage++;
+  //   this.customerListPaging = this.customerList.slice((this.curPage - 1) * 5, this.curPage * 5);
+  // }
+  //
+  // previos(): void {
+  //   this.curPage--;
+  //   this.customerListPaging = this.customerList.slice((this.curPage - 1) * 5, this.curPage * 5);
+  // }
 
   getInfoCustomerDelete(customerName: string, customerId: number): void {
     this.customerNameDelete = customerName;
@@ -69,16 +68,14 @@ export class ListCustomerComponent implements OnInit {
   }
 
   searchByMore(): void {
-    this.customerService.findAllCustomer().subscribe(value => {
-      this.customerList = value.filter(item => item.name.toLowerCase().includes(this.customerNameSearch.toLowerCase())
-        && item.address.toLowerCase().includes(this.customerAddressSearch.toLowerCase())
-        && item.phoneNumber.toLowerCase().includes(this.customerPhoneSearch.toLowerCase()));
-      this.totalPage = Math.ceil(this.customerList.length / 5);
-      this.customerListPaging = this.customerList.slice(0, 5);
+    this.customerService.findAllCustomerSearch(this.customerNameSearch, this.page, this.pageSize).subscribe(value => {
+      console.log(value);
+      this.customer$ = new BehaviorSubject<Customer[]>(value.content);
+      this.total$ = new BehaviorSubject<number>(value.totalElements);
     }, error => {
       console.log(error);
     }, () => {
-      console.log('Tìm kiếm khách hàng có tên là: "' + this.customerNameSearch + '" (có ' + this.customerList.length + ' kết quả).');
+      console.log('Tìm kiếm khách hàng có tên là: ' + this.customerNameSearch);
     });
   }
 

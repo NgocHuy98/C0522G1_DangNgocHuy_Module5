@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
-import {CustomerType} from 'src/app/contract/model/customer-type';
-import {CustomerService} from '../../service/customer.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import Swal from 'sweetalert2';
+import {CustomerType} from '../../model/customer-type';
+import {CustomerService} from '../customer.service';
 
 @Component({
   selector: 'app-edit-customer',
@@ -40,10 +40,10 @@ export class EditCustomerComponent implements OnInit {
         dateOfBirth: new FormControl(customer.dateOfBirth, this.checkMinAge18AndMaxAge80),
         gender: new FormControl(customer.gender, Validators.required),
         idCard: new FormControl(customer.idCard, [Validators.required, Validators.pattern('^\\d{9}$|^\\d{12}$')]),
-        phoneNumber: new FormControl(customer.phoneNumber, [Validators.required, Validators.pattern('(0|[(]84[)][+])9[01]\\d{7}')]),
+        phone: new FormControl(customer.phone, [Validators.required, Validators.pattern('(0|[(]84[)][+])9[01]\\d{7}')]),
         email: new FormControl(customer.email, [Validators.required, Validators.email]),
         address: new FormControl(customer.address, Validators.required),
-        customerType: new FormControl(customer.customerType, Validators.required)
+        customerTypeId: new FormControl(customer.customerTypeId, Validators.required)
       });
     }, error => {
       console.log(error);

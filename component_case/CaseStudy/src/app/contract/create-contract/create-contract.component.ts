@@ -2,12 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Customer} from '../../model/customer';
 import {Facility} from '../../model/facility';
-import {CustomerService} from '../../service/customer.service';
+import {CustomerService} from '../../customer/customer.service';
 import {FacilityService} from '../../service/facility.service';
 import {Router} from '@angular/router';
 import {ContractService} from '../../service/contract.service';
 import {Contract} from '../../model/contract';
 import Swal from 'sweetalert2';
+import {SearchResult} from '../../model/search-result';
 
 @Component({
   selector: 'app-create-contract',
@@ -27,7 +28,7 @@ export class CreateContractComponent implements OnInit {
     facility: new FormControl('', Validators.required)
   });
 
-  customerList: Customer[];
+  customerList: SearchResult<Customer>;
   facilityList: Facility[];
 
   curDate = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate();

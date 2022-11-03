@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
-import {CustomerType} from '../../contract/model/customer-type';
-import {CustomerService} from '../../service/customer.service';
+import {CustomerService} from '../customer.service';
 import {Router} from '@angular/router';
 import Swal from 'sweetalert2';
+import {CustomerType} from '../../model/customer-type';
 
 
 @Component({
@@ -18,10 +18,10 @@ export class CreateCustomerComponent implements OnInit {
     dateOfBirth: new FormControl('', this.checkMinAge18AndMaxAge80),
     gender: new FormControl('', Validators.required),
     idCard: new FormControl('', [Validators.required, Validators.pattern('^\\d{9}$|^\\d{12}$')]),
-    phoneNumber: new FormControl('', [Validators.required, Validators.pattern('(0|[(]84[)][+])9[01]\\d{7}')]),
+    phone: new FormControl('', [Validators.required, Validators.pattern('(0|[(]84[)][+])9[01]\\d{7}')]),
     email: new FormControl('', [Validators.required, Validators.email]),
     address: new FormControl('', Validators.required),
-    customerType: new FormControl('', Validators.required)
+    customerTypeId: new FormControl('', Validators.required)
   });
 
 
@@ -53,7 +53,7 @@ export class CreateCustomerComponent implements OnInit {
     }, error => {
       console.log(error);
     }, () => {
-      this.router.navigateByUrl('customer');
+      this.router.navigateByUrl('customer/');
       console.log('Thêm mới khách hàng thành công!');
     });
   }

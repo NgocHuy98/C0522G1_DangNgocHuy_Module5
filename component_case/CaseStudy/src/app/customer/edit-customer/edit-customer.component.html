@@ -35,14 +35,14 @@
             <label>Customer type</label>
 
             <div class="input-group">
-              <select id="customerType" class="form-select" formControlName="customerType" [compareWith]="compareWithId">
+              <select id="customerType" class="form-select" formControlName="customerTypeId" [compareWith]="compareWithId">
                 <option value="" disabled>Chọn loại khách hàng..</option>
                 <option *ngFor="let item of customerTypeList" [ngValue]="item">{{item.name}}</option>
               </select>
             </div>
             <div class="alert alert-danger" role="alert"
-                 *ngIf="customerFormGroup.controls.customerType.hasError('required') &&
-                      customerFormGroup.controls.customerType.touched">
+                 *ngIf="customerFormGroup.controls.customerTypeId.hasError('required') &&
+                      customerFormGroup.controls.customerTypeId.touched">
               Vui lòng chọn loại khách!
             </div>
 
@@ -107,18 +107,18 @@
             <label for="phone" class="h6">Số điện thoại:</label>
 
             <div class="input-group">
-              <input type="text" id="phone" class="form-control" placeholder="Nhập SĐT.." formControlName="phoneNumber"/>
+              <input type="text" id="phone" class="form-control" placeholder="Nhập SĐT.." formControlName="phone"/>
 
             </div>
 
             <div class="alert alert-danger" role="alert"
-                 *ngIf="customerFormGroup.controls.phoneNumber.hasError('required') &&
-                      customerFormGroup.controls.phoneNumber.touched">
+                 *ngIf="customerFormGroup.controls.phone.hasError('required') &&
+                      customerFormGroup.controls.phone.touched">
               Số điện thoại không được để trống!
             </div>
             <div class="alert alert-danger" role="alert"
-                 *ngIf="customerFormGroup.controls.phoneNumber.hasError('pattern') &&
-                      customerFormGroup.controls.phoneNumber.touched">
+                 *ngIf="customerFormGroup.controls.phone.hasError('pattern') &&
+                      customerFormGroup.controls.phone.touched">
               Số điện thoại phải đúng định dạng 090xxxxxxx hoặc 091xxxxxxx hoặc (84)+90xxxxxxx hoặc (84)+91xxxxxxx!
             </div>
 

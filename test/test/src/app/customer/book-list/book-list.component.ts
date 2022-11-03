@@ -11,8 +11,8 @@ import Swal from 'sweetalert2';
 })
 export class BookListComponent implements OnInit {
 
-  bookIdSearch = '';
-  customerSearch: Customer = {id: 5, customerName: ''};
+  bookIdSearch: number;
+  customerSearch: Customer = {id: 1, customerName: ''};
   customerList: Customer[];
 
   bookListPaging: Book[];
@@ -30,7 +30,7 @@ export class BookListComponent implements OnInit {
       console.log(value);
       this.customerList = value;
     });
-    this.bookService.findAllBookSearch(this.customerSearch.customerName)
+    this.bookService.findAllBookSearch(this.customerSearch.customerName, this.bookIdSearch)
       .subscribe(list => {
         console.log(list);
         this.totalPage = Math.ceil(list.length / this.numberRecord);
@@ -41,7 +41,7 @@ export class BookListComponent implements OnInit {
       });
 
     this.bookService.findBookSearchPaging(this.numberRecord, this.curPage,
-      this.customerSearch.customerName).subscribe(pagingList => {
+      this.customerSearch.customerName, this.bookIdSearch).subscribe(pagingList => {
       this.bookListPaging = pagingList;
     }, error => {
       console.log(error);
@@ -66,17 +66,10 @@ export class BookListComponent implements OnInit {
 
   deleteBook(): void {
     this.bookService.deleteBook(this.bookIdDelete).subscribe(() => {
-      // 1 thông báo vip-pro:
       Swal.fire({
         icon: 'success',
         title: 'Xóa thành công!',
-        text: 'Khách hàng: ' + this.bookIdDelete,
-        showClass: {
-          popup: 'animate__animated animate__fadeInDown'
-        },
-        hideClass: {
-          popup: 'animate__animated animate__fadeOutUp'
-        }
+        text: 'Khách hàng: ' + this.bookIdDelete
       });
 
       this.curPage = 1;

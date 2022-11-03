@@ -19,6 +19,14 @@
     {
       "id": 5,
       "customerName": "Đặng Ngọc Huy"
+    },
+    {
+      "id": 6,
+      "customerName": "Đặng Ngọc Hoàng"
+    },
+    {
+      "id": 7,
+      "customerName": "Đặng Hữu Huy"
     }
   ],
   "books": [
@@ -72,6 +80,32 @@
       "customer": {
         "id": 5,
         "customerName": "Đặng Ngọc Huy"
+      }
+    },
+    {
+      "dateOpen": "2022-11-20",
+      "timeStart": "2022-12-20",
+      "timesOut": "2023-12-20",
+      "sendMoney": 10000000,
+      "interested": 0.5,
+      "free": "áo mưa",
+      "customer": {
+        "id": 6,
+        "customerName": "Đặng Ngọc Hùng"
+      },
+      "id": 7
+    },
+    {
+      "id": 6,
+      "dateOpen": "2022-11-20",
+      "timeStart": "2022-12-20",
+      "timesOut": "2023-12-20",
+      "sendMoney": 10000000,
+      "interested": 0.5,
+      "free": "áo mưa",
+      "customer": {
+        "id": 7,
+        "customerName": "Đặng Hữu Huy"
       }
     }
   ]
